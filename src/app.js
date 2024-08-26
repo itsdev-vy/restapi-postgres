@@ -1,14 +1,13 @@
-const express = require('express');
+import express from 'express';
+import { PORT } from './env.js';
+import middleware from './middleware/middleware.js';
+import routes from './setup/parentRoutes.js';
 
 const app = express();
 
-app.get('/', (req, res) => {
-    res.status(200).json({
-        status: 'success',
-        message: 'Hello World!'
-    });
-});
+middleware(app);
+routes(app);
 
-app.listen(3000, () => {
-    console.log('Server running on port 3000');
-}); 
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
