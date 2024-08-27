@@ -1,7 +1,7 @@
 import { Sequelize, DataTypes } from "sequelize";
 import path from "path";
 import fs from 'fs/promises';
-import dbConfig from "../config/db.config";
+import dbConfig from "../config/db.config.js";
 
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,

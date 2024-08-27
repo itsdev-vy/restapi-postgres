@@ -2,7 +2,7 @@ import { Model } from 'sequelize';
 export default async (sequelize, DataTypes) => {
     class Post extends Model {
         static associate(models) {
-            Post.belongsTo(models.Users, { foreignKey: 'id' });
+            Post.belongsTo(models.User, { foreignKey: 'user_id' });
         }
     };
     Post.init({

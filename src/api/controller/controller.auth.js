@@ -1,10 +1,10 @@
-import db from '../../models/index';
+import db from '../../models/index.js';
 
 const User = db.Users;
 
 
 export const Test = async (req, res) => {
-    res.send("Hello World!")
+    return res.status(200).send({ status: "success", message: "Hello World" })
 }
 
 export const postUsers = async (req, res) => {
